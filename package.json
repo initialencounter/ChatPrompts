@@ -1,0 +1,30 @@
+{
+  "name": "@initencounter/chat-prompts",
+  "version": "1.0.0",
+  "description": "chatgpt prompts for koishi-plugin-davinci-003",
+  "main": "index.js",
+  "scripts": {
+    "update": "node scripts/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/initialencounter/ChatPrompts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/initialencounter/ChatPrompts/issues"
+  },
+  "homepage": "https://github.com/initialencounter/ChatPrompts#readme",
+  "keywords": [
+    "ChatGPT",
+    "prompts",
+    "davinci-003",
+    "plugin"
+  ],
+  "author": "initencounter <2911583893@qq.com>",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "csv-parser": "^3.0.0",
+    "xlsx": "^0.18.5"
+  }
+}
