@@ -1,7 +1,7 @@
 const axios = require('axios')
 const fs = require('fs')
 const csv = require('csv-parser')
-const result = require('../personality.json')
+const result = require('./personality.json')
 
 
 let step = 3
