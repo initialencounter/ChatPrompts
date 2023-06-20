@@ -1,6 +1,6 @@
 {
   "name": "@initencounter/chat-prompts",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "chatgpt prompts for koishi-plugin-davinci-003",
   "main": "index.js",
   "scripts": {

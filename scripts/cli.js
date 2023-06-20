@@ -1,2 +1,2 @@
 const prompt = require('../index')
-prompt.update()
+prompt.update(1)

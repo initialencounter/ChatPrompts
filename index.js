@@ -85,7 +85,7 @@ const DAN_data = async () => {
 const loop = async () => {
     return new Promise(resolve => {
         const intervalID = setInterval(() => {
-            if (step == 0) {
+            if (step < 1) {
                 console.log(`Be updating, process: (${3 - step}/3)`)
                 const personality = JSON.stringify(result, ' ', 4)
                 fs.writeFileSync('personality.json', personality)
@@ -103,10 +103,14 @@ const loop = async () => {
 
 const ChatPrompts = {
     personality: result,
-    update: async function main() {
-        f_data()
-        plexpt_data()
-        DAN_data()
+    update: async function main(update=false) {
+        if(update){
+            f_data()
+            plexpt_data()
+            DAN_data()
+        }else{
+            step = 0
+        }
         return await loop()
     }
 }
