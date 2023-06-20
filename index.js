@@ -91,7 +91,7 @@ const loop = async () => {
                 fs.writeFileSync('personality.json', personality)
                 console.log(`update done!\nsuccessed:${success}\nfailed:${failed}`)
                 clearInterval(intervalID)
-                resolve(step)
+                resolve(result)
             }
             else {
                 console.log(`Be updating, process: (${3 - step}/3)`)
