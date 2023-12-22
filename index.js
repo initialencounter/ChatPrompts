@@ -4,6 +4,7 @@ const csv = require('csv-parser')
 const result = require('./personality.json')
 
 
+
 let step = 3
 let success = 0
 let failed = 0
@@ -44,7 +45,7 @@ const plexpt_data = async () => {
         responseType: 'application/json'
     }).then(res => {
         const id = '_plexpt'
-        for (var i of res.data) {
+        for (var i of JSON.parse(res.data)) {
             result[String(i["act"] + id)] = [{ "role": "system", "content": String(i["prompt"]) }]
         }
         step -= 1
@@ -69,6 +70,7 @@ const DAN_data = async () => {
         const summary = res.data.match(/(?<=<summary>)(.*?)(?=<\/summary>)/g)
         const content = res.data.match(/(?<=<\/summary>)([\s\S]*?)(?=<\/details>)/g)
         for (const i in summary) {
+            console.log(String(summary[i] + id))
             result[String(summary[i] + id)] = [{ "role": "system", "content": String(content[i]) }]
         }
         step -= 1
@@ -107,7 +109,6 @@ const ChatPrompts = {
         if(update){
             f_data()
             plexpt_data()
-            DAN_data()
         }else{
             step = 0
         }
