@@ -1,5 +1,5 @@
 const p = require('../source/plexpt.json')
-const fs = require('fs')
+import fs from 'fs'
 const pp = require('../src/personality.json')
 const id = '_plexpt'
 for(var i of p){

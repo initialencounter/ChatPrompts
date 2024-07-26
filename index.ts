@@ -9,7 +9,7 @@ let step = 3
 let success = 0
 let failed = 0
 
-const f_result = []
+const f_result: any[] = []
 const f_data = async () => {
     const f_url = 'https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv'
     return axios({
@@ -18,7 +18,7 @@ const f_data = async () => {
         responseType: 'stream'
     }).then(res => {
         res.data.pipe(csv())
-            .on('data', (data) => f_result.push(data))
+            .on('data', (data:any) => f_result.push(data))
             .on('end', () => {
                 const id = '_f'
                 for (var i of f_result) {
@@ -89,7 +89,7 @@ const loop = async () => {
         const intervalID = setInterval(() => {
             if (step < 1) {
                 console.log(`Be updating, process: (${3 - step}/3)`)
-                const personality = JSON.stringify(result, ' ', 4)
+                const personality = JSON.stringify(result, null, 4)
                 fs.writeFileSync('personality.json', personality)
                 console.log(`update done!\nsuccessed:${success}\nfailed:${failed}`)
                 clearInterval(intervalID)

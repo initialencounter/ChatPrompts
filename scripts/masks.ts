@@ -1,5 +1,5 @@
 const p = require('../source/masks.json')
-const fs = require('fs')
+import fs from 'fs'
 const pp = require('../personality.json')
 const id = '_mask'
 for(var i of p){

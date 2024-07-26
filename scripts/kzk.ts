@@ -1,15 +1,15 @@
 const XLSX = require('xlsx')
-const fs = require('fs')
+import fs from 'fs';
 
 const workbook = XLSX.readFile('../source/kzk.xlsx')
 const sheetName = workbook.SheetNames["0"]
 
 const worksheet = workbook.Sheets[sheetName];
 const jsonData = XLSX.utils.sheet_to_json(worksheet)
-const name_list = []
+const name_list:any[] = []
 const ppp = require('../src/personality.json')
 for(var i of jsonData){
-    let key = i['__EMPTY']
+    let key:any = i['__EMPTY']
     let count = 1
     const key_s = key
     while(name_list.includes(key)){

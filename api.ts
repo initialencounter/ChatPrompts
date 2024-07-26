@@ -1,4 +1,4 @@
-const axios = require('axios')
+import axios from 'axios'
 
 async function chat_with_gpt(text) {
     let message = [{ role: 'system', content: '你是一个翻译引擎，请将文本翻译为' + '中文' + '，只需要翻译不需要解释。' }, { role: 'user', content: `请帮我我将如下文字翻译成${'中文'},“${text}”` }]
