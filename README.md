@@ -5,7 +5,7 @@
 
 
 适配 [koishi-plugin-davinci-003](https://github.com/initialencounter/mykoishi/tree/master/davinci-003) [![npm](https://img.shields.io/npm/v/koishi-plugin-davinci-003?style=flat-square)](https://www.npmjs.com/package/koishi-plugin-davinci-003)
-<br>
+
 
 爬取3大主流仓库的人格，并整理成 davinci-003 支持的格式
 
